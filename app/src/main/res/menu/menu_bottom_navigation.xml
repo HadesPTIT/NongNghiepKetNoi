@@ -19,7 +19,7 @@
     <item
         android:id="@+id/navigation_chat"
         android:icon="@drawable/ic_speaker_notes_black_24dp"
-        android:title="Trò chuyện" />
+        android:title="Tin nhắn " />
 
     <item
         android:id="@+id/navigation_profile"
