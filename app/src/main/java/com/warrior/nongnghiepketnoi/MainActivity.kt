@@ -1,15 +1,20 @@
 package com.warrior.nongnghiepketnoi
 
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
+import com.warrior.nongnghiepketnoi.newfeeds.NewFeedsFragment
 
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractionListener {
+    override fun onFragmentInteraction(uri: Uri) {
+        //TODO
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,15 +22,24 @@ class MainActivity : AppCompatActivity() {
 
         val navigation = findViewById<MorphBottomNavigationView>(R.id.bottomNavigationView)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-    }
+        newFeedsFragment = NewFeedsFragment.newInstance()
+        replaceFragment(newFeedsFragment)
 
+    }
+    private fun replaceFragment(frag :Fragment) {
+        if(frag.isAdded)
+            return
+        val ft = supportFragmentManager.beginTransaction()
+        ft.add(R.id.frame_container, frag).commit()
+    }
+    private lateinit var newFeedsFragment: NewFeedsFragment
     private val mOnNavigationItemSelectedListener =
         object : BottomNavigationView.OnNavigationItemSelectedListener {
 
             override fun onNavigationItemSelected(item: MenuItem): Boolean {
                 when (item.itemId) {
                     R.id.navigation_new_feed -> {
-                        Log.e("TAG","navigation_new_feed")
+                        replaceFragment(newFeedsFragment)
                         return true
                     }
                     R.id.navigation_event -> {
