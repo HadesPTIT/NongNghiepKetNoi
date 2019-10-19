@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
 import com.warrior.nongnghiepketnoi.newfeeds.NewFeedsFragment
+import androidx.recyclerview.widget.RecyclerView
+import com.warrior.nongnghiepketnoi.chatlist.ChatListFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractionListener {
@@ -23,16 +26,15 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
         val navigation = findViewById<MorphBottomNavigationView>(R.id.bottomNavigationView)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         newFeedsFragment = NewFeedsFragment.newInstance()
+        chatListFragment = ChatListFragment.newInstance()
         replaceFragment(newFeedsFragment)
-
     }
     private fun replaceFragment(frag :Fragment) {
-        if(frag.isAdded)
-            return
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.frame_container, frag).commit()
+        ft.replace(R.id.frame_container, frag).commit()
     }
     private lateinit var newFeedsFragment: NewFeedsFragment
+    private lateinit var chatListFragment: ChatListFragment
     private val mOnNavigationItemSelectedListener =
         object : BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -51,7 +53,7 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
                         return true
                     }
                     R.id.navigation_chat -> {
-                        Log.e("TAG","navigation_chat")
+                        replaceFragment(chatListFragment)
                         return true
                     }
                     R.id.navigation_profile -> {
