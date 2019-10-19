@@ -1,11 +1,10 @@
 package com.warrior.nongnghiepketnoi.quiz.model
 
-class QuizCategory {
-    private val image: String = ""
-    private val name: String = ""
-    private val content: String = ""
-    private val id: Int = 0
-}
+class QuizCategory(
+    val image: Int,
+    val name: String,
+    val content: String
+)
 
 class QuizTest(
     val content: String,

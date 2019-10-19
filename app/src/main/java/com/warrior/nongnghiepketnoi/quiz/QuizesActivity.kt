@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.warrior.nongnghiepketnoi.R
 import com.warrior.nongnghiepketnoi.quiz.adapter.QuizAdapter
 import com.warrior.nongnghiepketnoi.quiz.model.QuizCategory
 import kotlinx.android.synthetic.main.activity_quizes.*
@@ -16,19 +17,29 @@ class QuizesActivity : AppCompatActivity(), QuizAdapter.OnClickQuizAll {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.warrior.nongnghiepketnoi.R.layout.activity_quizes)
+        setContentView(R.layout.activity_quizes)
 
         ic_back.setOnClickListener {
             onBackPressed()
         }
 
         val users = ArrayList<QuizCategory>()
-        users.add(QuizCategory())
-        users.add(QuizCategory())
-        users.add(QuizCategory())
-        users.add(QuizCategory())
-        users.add(QuizCategory())
-        users.add(QuizCategory())
+        users.add(
+            QuizCategory(
+                R.drawable.default_img_test,
+                "Kỹ thuật trồng chè",
+                "Để đạt được các công nhận về chuyên gia trồng chè bạn cần thực hiện bài kiểm tra." +
+                        "Hoàn thành bài kiểm tra sẽ được công nhận bạn là chuyên gia"
+            )
+        )
+        users.add(
+            QuizCategory(
+                R.drawable.cafe,
+                "Kỹ thuật trồng cây cà phê\n",
+                "Để đạt được các công nhận về chuyên gia trồng cafe bạn cần thực hiện bài kiểm tra." +
+                        "Hoàn thành bài kiểm tra sẽ được công nhận bạn là chuyên gia"
+            )
+        )
 
         val adapter = QuizAdapter(users, this)
         recycler_quiz.adapter = adapter

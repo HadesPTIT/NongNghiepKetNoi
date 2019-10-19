@@ -30,23 +30,23 @@ class QuizAdapter(
         holder.bindView(userList[position])
     }
 
-    class QuizViewHolder(itemView: View, onClickQuizAll: OnClickQuizAll) : RecyclerView.ViewHolder(itemView){
+    class QuizViewHolder(itemView: View, onClickQuizAll: OnClickQuizAll) :
+        RecyclerView.ViewHolder(itemView) {
 
         private var category: QuizCategory? = null
 
         init {
-            itemView.setOnClickListener{
+            itemView.setOnClickListener {
                 onClickQuizAll.onClickQuizAllListener(category!!)
             }
         }
 
         fun bindView(quiz: QuizCategory) {
-            category= quiz
-            itemView.name_quiz.text = "Chuyên gia trồng chè"
-            itemView.image.setBackgroundResource(R.drawable.default_img_test)
+            category = quiz
+            itemView.name_quiz.text = quiz.name
+            itemView.image.setBackgroundResource(quiz.image)
             itemView.content_quiz.text =
-                "Để đạt được các công nhận về chuyên gia trồng chè bạn cần thực hiện bài kiểm tra.\n" +
-                        "Hoàn thành bài kiểm tra sẽ được công nhận bạn là chuyên gia"
+                quiz.content
         }
 
         companion object

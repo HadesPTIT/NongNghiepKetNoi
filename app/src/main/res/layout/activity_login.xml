@@ -96,18 +96,33 @@
             android:textAllCaps="false"
             android:layout_height="wrap_content"/>
 
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_button_gg"
+            android:textSize="17sp"
+            android:text="Đăng nhập với google"
+            android:layout_alignParentBottom="true"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"/>
 
+        <Button
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_button_fb"
+            android:textSize="17sp"
+            android:text="Đăng nhập với Facebook"
+            android:layout_alignParentBottom="true"
+            android:textAllCaps="false"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
-    <Button
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:textColor="@color/white"
-        android:background="@drawable/bg_button_gg"
-        android:textSize="17sp"
-        android:text="Đăng nhập với google"
-        android:layout_alignParentBottom="true"
-        android:textAllCaps="false"
-        android:layout_height="wrap_content"/>
+
 
 </RelativeLayout>
