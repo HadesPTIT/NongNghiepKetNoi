@@ -72,6 +72,7 @@
             />
 
         <TextView
+            android:visibility="gone"
             android:textStyle="italic"
             android:gravity="center"
             android:text="Today 10:20"
@@ -80,17 +81,20 @@
             android:layout_height="wrap_content"/>
 
         <TextView
+            android:id="@+id/me_message"
             android:layout_marginStart="10dp"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:padding="15dp"
             android:background="@drawable/bg_chat_item_green"
             android:layout_marginTop="30dp"
-            android:text="Xin chào chuyên gia  "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
+
+
         <TextView
+            android:id="@+id/guest_message"
             android:layout_marginEnd="10dp"
             android:layout_gravity="end"
             android:layout_marginStart="10dp"
@@ -99,63 +103,102 @@
             android:padding="15dp"
             android:background="@drawable/bg_chat_item_white"
             android:layout_marginTop="30dp"
-            android:text="Xin chào bạn !"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/me_message2"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:padding="15dp"
+            android:background="@drawable/bg_chat_item_green"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/guest_message2"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:padding="15dp"
+            android:background="@drawable/bg_chat_item_white"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:id="@+id/layout_chatbox"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:minHeight="48dp"
-        android:background="#ffffff">
-
-        <Button
-            android:id="@+id/button_camera"
-            android:textSize="14dp"
-            android:background="@android:drawable/ic_menu_camera"
-            android:clickable="true"
-            android:layout_width="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:layout_gravity="bottom" />
-        <Button
-            android:layout_marginStart="5dp"
-            android:id="@+id/button_image"
-            android:textSize="14dp"
-            android:background="@android:drawable/ic_menu_gallery"
-            android:clickable="true"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:gravity="center"
-            android:layout_gravity="bottom" />
-        <EditText
-            android:id="@+id/edittext_chatbox"
-            android:hint="Nhập bình luận "
-            android:background="@android:color/transparent"
-            android:layout_gravity="center"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/typing"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="6"/>
+            android:layout_marginBottom="3dp"
+            android:text="Nam đang trả lời..."
+            android:textColor="@color/dark_grey" />
 
-        <Button
-            android:id="@+id/button_chatbox_send"
-            android:text="Gửi"
-            android:textSize="14dp"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:layout_width="64dp"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:layout_gravity="bottom" />
+        <LinearLayout
+            android:id="@+id/layout_chatbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp"
+            android:background="#ffffff">
 
+            <Button
+                android:id="@+id/button_camera"
+                android:textSize="14dp"
+                android:background="@android:drawable/ic_menu_camera"
+                android:clickable="true"
+                android:layout_width="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_gravity="bottom" />
+            <Button
+                android:layout_marginStart="5dp"
+                android:id="@+id/button_image"
+                android:textSize="14dp"
+                android:background="@android:drawable/ic_menu_gallery"
+                android:clickable="true"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_gravity="bottom" />
+            <EditText
+                android:id="@+id/edittext_chatbox"
+                android:hint="Nhập bình luận "
+                android:background="@android:color/transparent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:maxLines="6"/>
+
+            <Button
+                android:id="@+id/button_chatbox_send"
+                android:text="Gửi"
+                android:textSize="14dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="64dp"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:layout_gravity="bottom" />
+
+        </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>
