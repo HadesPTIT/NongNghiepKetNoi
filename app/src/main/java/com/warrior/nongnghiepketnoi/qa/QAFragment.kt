@@ -1,21 +1,18 @@
 package com.warrior.nongnghiepketnoi.qa
 
-import android.content.Context
-import android.net.Uri
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import com.warrior.nongnghiepketnoi.R
 import com.warrior.nongnghiepketnoi.constance.Const
 import com.warrior.nongnghiepketnoi.newfeeds.AdapterFeed
 import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed
-import java.util.ArrayList
-import android.content.Intent
-import com.warrior.nongnghiepketnoi.R
+import java.util.*
 
 
 private const val ARG_PARAM1 = "param1"
@@ -31,7 +28,7 @@ class QAFragment : Fragment(), AdapterFeed.Listener {
 
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     var modelFeedArrayList = ArrayList<ModelFeed>()
     lateinit var adapterFeed: AdapterFeed
 

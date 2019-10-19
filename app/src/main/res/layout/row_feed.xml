@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp">
+
         <RelativeLayout
             android:id="@+id/container_view"
             android:layout_width="wrap_content"
@@ -25,17 +26,12 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_propic1" />
-            <ImageView
-                android:id="@+id/id_tick"
-                android:src="@drawable/icon_tick"
-                android:layout_width="15dp"
-                android:visibility="gone"
-                android:layout_height="15dp"/>
 
         </RelativeLayout>
 
 
         <LinearLayout
+            android:id="@+id/ln"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -63,6 +59,15 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/id_tick"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/ln"
+            android:src="@drawable/ic_expert"
+            android:visibility="gone" />
+
     </RelativeLayout>
 
     <TextView
@@ -71,8 +76,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rellay1"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
         android:text="This is Status"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -93,8 +98,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgView_postPic"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp">
 
 
         <LinearLayout
@@ -144,11 +149,12 @@
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_rice" />
+
                 <TextView
-                    android:layout_gravity="center"
                     android:id="@+id/tv_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="18"
                     android:textColor="@color/black"
@@ -156,9 +162,9 @@
 
                 <TextView
                     android:id="@+id/tv_label_rice"
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="Lúa"

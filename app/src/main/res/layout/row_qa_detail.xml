@@ -27,12 +27,6 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_propic1" />
-            <ImageView
-                android:id="@+id/id_tick"
-                android:src="@drawable/icon_tick"
-                android:layout_width="15dp"
-                android:visibility="gone"
-                android:layout_height="15dp"/>
 
         </RelativeLayout>
 
@@ -44,34 +38,51 @@
             android:layout_toRightOf="@+id/container_view"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_name"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-medium"
-                android:text="Karun Shrestha"
-                android:textColor="@color/black"
-                android:textSize="17sp" />
-            <TextView
-                android:id="@+id/tv_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
-                android:text="11 hrs"
-                android:textColor="@color/grey"
-                android:textSize="13sp" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Karun Shrestha"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_name"
+                    android:fontFamily="sans-serif"
+                    android:text="11 hrs"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:id="@+id/id_tick"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tv_name"
+                    android:src="@drawable/ic_expert"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
             <LinearLayout
-                android:orientation="vertical"
                 android:id="@+id/container_cm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rellay1"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="15dp"
-                android:background="@drawable/background_border">
+                android:background="@drawable/background_border"
+                android:orientation="vertical">
+
                 <TextView
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
                     android:id="@+id/tv_status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -79,18 +90,21 @@
                     android:layout_marginStart="3dp"
                     android:layout_marginEnd="3dp"
                     android:gravity="center_vertical"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
                     android:text="This is ThThis is StatusThis is StatusThis is StatusThis is StatusThis is StatusThis is StatusThis is StatusThis is StatusThis is StatusThis is StatusThis is Statusis is StatusStatus"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
             </LinearLayout>
+
             <ImageView
-                android:layout_marginRight="15dp"
                 android:id="@+id/imgView_postPic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rellay1"
                 android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
                 android:visibility="gone" />
@@ -101,11 +115,11 @@
 
     <LinearLayout
         android:id="@+id/line"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="35dp"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_below="@+id/rellay1">
+        android:layout_below="@+id/rellay1"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="15dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -124,11 +138,12 @@
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_rice" />
+
                 <TextView
-                    android:layout_gravity="center"
                     android:id="@+id/tv_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:text="18"
                     android:textColor="@color/black"
@@ -136,9 +151,9 @@
 
                 <TextView
                     android:id="@+id/tv_label_rice"
-                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="Lúa"
@@ -155,10 +170,10 @@
             android:layout_weight="2">
 
             <LinearLayout
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_centerInParent="true">
+                android:layout_centerInParent="true"
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="18dp"
@@ -181,11 +196,12 @@
         </RelativeLayout>
 
     </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="15dp"
         android:id="@+id/recyclerViewSubComment"
-        android:layout_below="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/line"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="15dp" />
 </RelativeLayout>
