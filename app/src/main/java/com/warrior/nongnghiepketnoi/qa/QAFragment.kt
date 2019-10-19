@@ -1,24 +1,19 @@
 package com.warrior.nongnghiepketnoi.qa
 
-import android.content.Context
-import android.net.Uri
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
-import com.warrior.nongnghiepketnoi.constance.Const
-import com.warrior.nongnghiepketnoi.newfeeds.AdapterFeed
-import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed
-import java.util.ArrayList
-import android.content.Intent
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.warrior.nongnghiepketnoi.R
-import kotlinx.android.synthetic.main.row_qa_feed.*
+import com.warrior.nongnghiepketnoi.constance.Const
+import com.warrior.nongnghiepketnoi.newfeeds.AdapterFeed
+import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed
 
 
 private const val ARG_PARAM1 = "param1"
@@ -34,7 +29,7 @@ class QAFragment : Fragment(), AdapterFeed.Listener {
 
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     var modelFeedArrayList = ArrayList<ModelFeed>()
     lateinit var adapterFeed: AdapterFeed
 
@@ -59,7 +54,8 @@ class QAFragment : Fragment(), AdapterFeed.Listener {
         recyclerView = view.findViewById(R.id.recyclerView) as RecyclerView
         val layoutManager = LinearLayoutManager(context)
         context?.let {
-            Glide.with(it).load("http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg").apply(RequestOptions.circleCropTransform())
+            Glide.with(it).load("http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg").apply(
+                RequestOptions.circleCropTransform())
                 .into(imgView_proPic)
         }
 

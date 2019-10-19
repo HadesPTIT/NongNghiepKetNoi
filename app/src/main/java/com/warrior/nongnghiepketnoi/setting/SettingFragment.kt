@@ -34,7 +34,7 @@ class SettingFragment : Fragment() {
 
     }
 
-    fun gotoQuizz() {
+    private fun gotoQuizz() {
         val intent = Intent(activity, QuizesActivity::class.java)
         startActivity(intent)
     }
