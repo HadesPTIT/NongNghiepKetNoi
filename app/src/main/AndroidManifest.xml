@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".qa.DeatailQAActivity"></activity>
+        <activity android:name=".qa.DeatailQAActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
@@ -25,7 +25,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".chatlist.chatdetail.ChatDetailActivity"/>
+        <activity android:name=".chatlist.chatdetail.ChatDetailActivity" />
+        <activity android:name=".quiz.QuizesActivity" />
+        <activity android:name=".quiz.StartQuizActivity" />
     </application>
 
 </manifest>
