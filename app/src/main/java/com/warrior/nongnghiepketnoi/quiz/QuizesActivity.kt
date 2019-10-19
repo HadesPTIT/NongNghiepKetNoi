@@ -18,6 +18,10 @@ class QuizesActivity : AppCompatActivity(), QuizAdapter.OnClickQuizAll {
         super.onCreate(savedInstanceState)
         setContentView(com.warrior.nongnghiepketnoi.R.layout.activity_quizes)
 
+        ic_back.setOnClickListener {
+            onBackPressed()
+        }
+
         val users = ArrayList<QuizCategory>()
         users.add(QuizCategory())
         users.add(QuizCategory())
@@ -41,18 +45,18 @@ class QuizesActivity : AppCompatActivity(), QuizAdapter.OnClickQuizAll {
                 val position = layoutManager.getPosition(centerView)
                 var targetPosition = -1
                 if (layoutManager.canScrollHorizontally()) {
-                    if (velocityX < 0) {
-                        targetPosition = position - 1
+                    targetPosition = if (velocityX < 0) {
+                        position - 1
                     } else {
-                        targetPosition = position + 1
+                        position + 1
                     }
                 }
 
                 if (layoutManager.canScrollVertically()) {
-                    if (velocityY < 0) {
-                        targetPosition = position - 1
+                    targetPosition = if (velocityY < 0) {
+                        position - 1
                     } else {
-                        targetPosition = position + 1
+                        position + 1
                     }
                 }
 

@@ -1,134 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/header_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_close_black_24dp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgView_proPic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_propic1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_setting" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/calibri"
+        android:text="Iron Man"
+        android:textColor="@color/colorPrimary"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/imgView_proPic"
+        app:layout_constraintTop_toBottomOf="@id/imgView_proPic" />
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="CÀI ĐẶT "
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name">
 
         <LinearLayout
             android:id="@+id/layout_quizz"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/bg_layout_setting_item">
+            android:layout_marginRight="20dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_speaker_notes_black_24dp" />
+                android:src="@drawable/ic_test" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="10dp"
                 android:gravity="center_vertical"
-                android:text="Bài kiểm tra "
+                android:text="Bài kiểm tra chuyên gia "
+                android:textColor="@color/colorPrimary"
                 android:textSize="17sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/bg_layout_setting_item">
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_marginLeft="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_person_black_24dp" />
+                android:src="@drawable/ic_expert" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="10dp"
                 android:gravity="center_vertical"
-                android:text="Trang cá nhân "
+                android:text="Thành tích"
+                android:textColor="@color/colorPrimary"
                 android:textSize="17sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/bg_layout_setting_item">
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_grade_black_24dp" />
+                android:src="@drawable/ic_help_outline_black_24dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
+                android:layout_marginStart="10dp"
                 android:gravity="center_vertical"
-                android:text="Đánh giá ứng dụng "
-                android:textSize="17sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/bg_layout_setting_item">
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="10dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_compare_arrows_black_24dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="30dp"
-                android:gravity="center_vertical"
-                android:text="Đăng xuất"
+                android:text="Trợ giúp"
+                android:textColor="@color/colorPrimary"
                 android:textSize="17sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/calibri"
+            android:text="Cài đặt"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/calibri"
+            android:text="Đăng xuất"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
