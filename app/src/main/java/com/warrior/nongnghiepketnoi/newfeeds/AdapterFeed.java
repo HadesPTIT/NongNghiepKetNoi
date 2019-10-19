@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,17 +20,23 @@ import java.util.ArrayList;
 
 
 public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> {
-
+    public interface Listener {
+         void onClickItem(ModelFeed modelFeed);
+    }
     Context context;
     ArrayList<ModelFeed> modelFeedArrayList = new ArrayList<>();
     RequestManager glide;
-
+    private Listener listener ;
     public AdapterFeed(Context context, ArrayList<ModelFeed> modelFeedArrayList) {
 
         this.context = context;
         this.modelFeedArrayList = modelFeedArrayList;
         glide = Glide.with(context);
 
+    }
+
+    public void setListener(Listener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -67,6 +74,19 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
             holder.tvLabelRice.setTextColor(context.getResources().getColor(R.color.black));
             holder.icRice.setImageResource(R.drawable.ic_rice);
         }
+        holder.btnComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClickItem(modelFeed);
+            }
+        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClickItem(modelFeed);
+            }
+        });
+
     }
 
     @Override
@@ -78,6 +98,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
 
         TextView tv_name, tv_time, tv_likes, tv_comments, tv_status,tvLabelRice;
         ImageView imgView_proPic, imgView_postPic ,icRice;
+        LinearLayout btnComment;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -86,6 +107,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
             imgView_postPic = (ImageView) itemView.findViewById(R.id.imgView_postPic);
             tvLabelRice =  itemView.findViewById(R.id.tv_label_rice);
             icRice =  itemView.findViewById(R.id.ic_rice);
+            btnComment =  itemView.findViewById(R.id.btnComment);
 
             tv_name = (TextView) itemView.findViewById(R.id.tv_name);
             tv_time = (TextView) itemView.findViewById(R.id.tv_time);

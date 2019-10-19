@@ -1,6 +1,8 @@
 package com.warrior.nongnghiepketnoi.newfeeds;
 
-public class ModelFeed {
+import java.io.Serializable;
+
+public class ModelFeed implements Serializable {
 
     private int id, likes, comments, postpic;
     private String name, time, status,propic;
