@@ -26,7 +26,7 @@ class QAFragment : Fragment(), AdapterFeed.Listener {
     override fun onClickItem(modelFeed: ModelFeed?) {
         val intent = Intent(activity, DeatailQAActivity::class.java)
         intent.putExtra("modelFeed",modelFeed)
-        getActivity()?.startActivity(intent)
+        activity?.startActivity(intent)
     }
 
     private var param1: String? = null
