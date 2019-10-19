@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
 import com.warrior.nongnghiepketnoi.newfeeds.NewFeedsFragment
-import androidx.recyclerview.widget.RecyclerView
 import com.warrior.nongnghiepketnoi.chatlist.ChatListFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import com.warrior.nongnghiepketnoi.events.EventsFragment
 import com.warrior.nongnghiepketnoi.qa.QAFragment
 
 
@@ -22,6 +21,8 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
     private lateinit var newFeedsFragment: NewFeedsFragment
     private lateinit var QAFragment: QAFragment
     private lateinit var chatListFragment: ChatListFragment
+    private lateinit var eventFragment: EventsFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
         newFeedsFragment = NewFeedsFragment.newInstance()
         chatListFragment = ChatListFragment.newInstance()
         QAFragment = com.warrior.nongnghiepketnoi.qa.QAFragment.newInstance()
+        eventFragment = EventsFragment.newInstance()
         replaceFragment(newFeedsFragment)
     }
     private fun replaceFragment(frag :Fragment) {
@@ -47,6 +49,7 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
                         return true
                     }
                     R.id.navigation_event -> {
+                        replaceFragment(eventFragment)
                         Log.e("TAG","navigation_event")
                         return true
                     }

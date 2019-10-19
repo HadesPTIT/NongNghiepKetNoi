@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imv_avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:src="@drawable/avartar_chat" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:paddingTop="15dp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="25dp"
+            android:text="Ngày hội khuyến nông Quảng Nam 11"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:text="Hôm nay - lúc 13h - Cung văn hóa quảng nam - An Xá - An Hòa - VN"
+            android:textColor="#646464" />
+
+        <ImageView
+            android:id="@+id/ava"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/tv_message"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_people" />
+
+        <TextView
+            android:id="@+id/tv_number_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_message"
+            android:layout_alignBaseline="@+id/ava"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ava"
+            android:paddingTop="1dp"
+            android:text="712 người quan tâm"
+            android:textSize="13sp"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:id="@+id/imv_follow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_star_green_24dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/ava"
+            android:layout_marginTop="10dp"
+            android:background="#D7D7D9" />
+    </RelativeLayout>
+
+</LinearLayout>
