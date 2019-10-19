@@ -1,6 +1,7 @@
 package com.warrior.nongnghiepketnoi.newfeeds
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,19 +13,26 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.warrior.nongnghiepketnoi.R
 import com.warrior.nongnghiepketnoi.constance.Const
+import com.warrior.nongnghiepketnoi.qa.DeatailQAActivity
 import java.util.ArrayList
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 
-class NewFeedsFragment : Fragment() {
+class NewFeedsFragment : Fragment(), AdapterFeed.Listener {
+    override fun onClickItem(modelFeed: ModelFeed?) {
+        val intent = Intent(activity, DeatailQAActivity::class.java)
+        intent.putExtra("modelFeed",modelFeed)
+        getActivity()?.startActivity(intent)
+    }
+
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-     lateinit var recyclerView: RecyclerView
-     var modelFeedArrayList = ArrayList<ModelFeed>()
-     lateinit var adapterFeed: AdapterFeed
+    lateinit var recyclerView: RecyclerView
+    var modelFeedArrayList = ArrayList<ModelFeed>()
+    lateinit var adapterFeed: AdapterFeed
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +58,7 @@ class NewFeedsFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
 
         adapterFeed = AdapterFeed(context, modelFeedArrayList)
+        adapterFeed.setListener(this)
         recyclerView.adapter = adapterFeed
         modelFeedArrayList.addAll(Const.populateRecyclerView())
 
@@ -70,6 +79,7 @@ class NewFeedsFragment : Fragment() {
         super.onDetach()
         listener = null
     }
+
     interface OnFragmentInteractionListener {
         fun onFragmentInteraction(uri: Uri)
     }

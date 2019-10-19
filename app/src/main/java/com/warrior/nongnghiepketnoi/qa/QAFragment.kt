@@ -10,17 +10,25 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-import com.warrior.nongnghiepketnoi.R
 import com.warrior.nongnghiepketnoi.constance.Const
 import com.warrior.nongnghiepketnoi.newfeeds.AdapterFeed
 import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed
 import java.util.ArrayList
+import android.content.Intent
+import com.warrior.nongnghiepketnoi.R
+
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 
-class QAFragment : Fragment() {
+class QAFragment : Fragment(), AdapterFeed.Listener {
+    override fun onClickItem(modelFeed: ModelFeed?) {
+        val intent = Intent(activity, DeatailQAActivity::class.java)
+        intent.putExtra("modelFeed",modelFeed)
+        getActivity()?.startActivity(intent)
+    }
+
     private var param1: String? = null
     private var param2: String? = null
     lateinit var recyclerView: RecyclerView
@@ -51,6 +59,7 @@ class QAFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
 
         adapterFeed = AdapterFeed(context, modelFeedArrayList)
+        adapterFeed.setListener(this)
         recyclerView.adapter = adapterFeed
         modelFeedArrayList.addAll(Const.populateQARecyclerView())
         adapterFeed.notifyDataSetChanged()
