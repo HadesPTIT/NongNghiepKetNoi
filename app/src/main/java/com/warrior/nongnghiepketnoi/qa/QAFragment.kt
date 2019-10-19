@@ -1,4 +1,4 @@
-package com.warrior.nongnghiepketnoi.newfeeds
+package com.warrior.nongnghiepketnoi.qa
 
 import android.content.Context
 import android.net.Uri
@@ -12,19 +12,20 @@ import androidx.recyclerview.widget.RecyclerView
 
 import com.warrior.nongnghiepketnoi.R
 import com.warrior.nongnghiepketnoi.constance.Const
+import com.warrior.nongnghiepketnoi.newfeeds.AdapterFeed
+import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed
 import java.util.ArrayList
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 
-class NewFeedsFragment : Fragment() {
+class QAFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
-     lateinit var recyclerView: RecyclerView
-     var modelFeedArrayList = ArrayList<ModelFeed>()
-     lateinit var adapterFeed: AdapterFeed
+    lateinit var recyclerView: RecyclerView
+    var modelFeedArrayList = ArrayList<ModelFeed>()
+    lateinit var adapterFeed: AdapterFeed
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,34 +52,15 @@ class NewFeedsFragment : Fragment() {
 
         adapterFeed = AdapterFeed(context, modelFeedArrayList)
         recyclerView.adapter = adapterFeed
-        modelFeedArrayList.addAll(Const.populateRecyclerView())
-
+        modelFeedArrayList.addAll(Const.populateQARecyclerView())
         adapterFeed.notifyDataSetChanged()
-
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
-        }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
-    }
-    interface OnFragmentInteractionListener {
-        fun onFragmentInteraction(uri: Uri)
     }
 
     companion object {
 
         @JvmStatic
         fun newInstance() =
-            NewFeedsFragment().apply {
+            QAFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

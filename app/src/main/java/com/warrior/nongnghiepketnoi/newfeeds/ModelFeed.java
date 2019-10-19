@@ -4,8 +4,9 @@ public class ModelFeed {
 
     private int id, likes, comments, postpic;
     private String name, time, status,propic;
+    private boolean isOwnRice;
 
-    public ModelFeed(int id, int likes, int comments, String propic, int postpic, String name, String time, String status) {
+    public ModelFeed(int id, int likes, int comments, String propic, int postpic, String name, String time, String status,boolean isOwnRice) {
         this.id = id;
         this.likes = likes;
         this.comments = comments;
@@ -14,6 +15,15 @@ public class ModelFeed {
         this.name = name;
         this.time = time;
         this.status = status;
+        this.isOwnRice = isOwnRice;
+    }
+
+    public boolean isOwnRice() {
+        return isOwnRice;
+    }
+
+    public void setOwnRice(boolean ownRice) {
+        isOwnRice = ownRice;
     }
 
     public int getId() {

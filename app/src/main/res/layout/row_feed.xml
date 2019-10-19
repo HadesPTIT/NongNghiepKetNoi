@@ -88,20 +88,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:src="@drawable/ic_like" />
-
-            <TextView
-                android:id="@+id/tv_like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="18"
-                android:textColor="@color/black"
-                android:textSize="13sp" />
-
         </LinearLayout>
 
         <TextView
@@ -139,18 +125,30 @@
                 android:layout_centerInParent="true">
 
                 <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
+                    android:id="@+id/ic_rice"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:adjustViewBounds="true"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/ic_like_btn" />
+                    app:srcCompat="@drawable/ic_rice" />
+                <TextView
+                    android:layout_gravity="center"
+                    android:id="@+id/tv_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="18"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/tv_label_rice"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Like"
+                    android:text="Lúa"
                     android:textColor="@color/black"
                     android:textSize="13sp" />
 

@@ -58,6 +58,15 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
             holder.imgView_postPic.setVisibility(View.VISIBLE);
             glide.load(modelFeed.getPostpic()).into(holder.imgView_postPic);
         }
+        if(modelFeed.isOwnRice()){
+            holder.tv_likes.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
+            holder.tvLabelRice.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
+            holder.icRice.setImageResource(R.drawable.ic_rice_select);
+        }else {
+            holder.tv_likes.setTextColor(context.getResources().getColor(R.color.black));
+            holder.tvLabelRice.setTextColor(context.getResources().getColor(R.color.black));
+            holder.icRice.setImageResource(R.drawable.ic_rice);
+        }
     }
 
     @Override
@@ -67,14 +76,16 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_name, tv_time, tv_likes, tv_comments, tv_status;
-        ImageView imgView_proPic, imgView_postPic;
+        TextView tv_name, tv_time, tv_likes, tv_comments, tv_status,tvLabelRice;
+        ImageView imgView_proPic, imgView_postPic ,icRice;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             imgView_proPic = (ImageView) itemView.findViewById(R.id.imgView_proPic);
             imgView_postPic = (ImageView) itemView.findViewById(R.id.imgView_postPic);
+            tvLabelRice =  itemView.findViewById(R.id.tv_label_rice);
+            icRice =  itemView.findViewById(R.id.ic_rice);
 
             tv_name = (TextView) itemView.findViewById(R.id.tv_name);
             tv_time = (TextView) itemView.findViewById(R.id.tv_time);
