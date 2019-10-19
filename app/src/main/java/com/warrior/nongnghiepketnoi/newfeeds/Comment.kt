@@ -10,7 +10,9 @@ class Comment(
     var name: String?,
     var time: String?,
     var status: String?,
-    var isOwnRice: Boolean
+    var isOwnRice: Boolean,
+    var tick : Boolean? = false
 ) : Serializable {
     var commentList: List<Comment>? = null
+
 }
