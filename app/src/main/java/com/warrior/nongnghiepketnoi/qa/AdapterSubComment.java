@@ -65,7 +65,7 @@ public class AdapterSubComment extends RecyclerView.Adapter<AdapterSubComment.My
             holder.tvLabelRice.setTextColor(context.getResources().getColor(R.color.black));
             holder.icRice.setImageResource(R.drawable.ic_rice);
         }
-
+        holder.icTick.setVisibility(comment.getTick()? View.VISIBLE:View.GONE);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class AdapterSubComment extends RecyclerView.Adapter<AdapterSubComment.My
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_name, tv_time, tv_likes,  tv_status,tvLabelRice;
-        ImageView imgView_proPic, imgView_postPic ,icRice;
+        ImageView imgView_proPic, imgView_postPic ,icRice,icTick;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -88,6 +88,7 @@ public class AdapterSubComment extends RecyclerView.Adapter<AdapterSubComment.My
             tv_time = (TextView) itemView.findViewById(R.id.tv_time);
             tv_likes = (TextView) itemView.findViewById(R.id.tv_like);
             tv_status = (TextView) itemView.findViewById(R.id.tv_status);
+            icTick =  itemView.findViewById(R.id.id_tick);
         }
     }
 }

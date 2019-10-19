@@ -1,4 +1,4 @@
-package com.warrior.nongnghiepketnoi.newfeeds;
+package com.warrior.nongnghiepketnoi.qa;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,12 +14,12 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.warrior.nongnghiepketnoi.R;
-
+import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed;
 
 import java.util.ArrayList;
 
 
-public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> {
+public class AdapterQA extends RecyclerView.Adapter<AdapterQA.MyViewHolder> {
     public interface Listener {
          void onClickItem(ModelFeed modelFeed);
     }
@@ -27,7 +27,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
     ArrayList<ModelFeed> modelFeedArrayList = new ArrayList<>();
     RequestManager glide;
     private Listener listener ;
-    public AdapterFeed(Context context, ArrayList<ModelFeed> modelFeedArrayList) {
+    public AdapterQA(Context context, ArrayList<ModelFeed> modelFeedArrayList) {
 
         this.context = context;
         this.modelFeedArrayList = modelFeedArrayList;
@@ -42,7 +42,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_feed, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_qa_feed, parent, false);
         MyViewHolder viewHolder = new MyViewHolder(view);
 
         return viewHolder;
@@ -55,7 +55,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
         holder.tv_name.setText(modelFeed.getName());
         holder.tv_time.setText(modelFeed.getTime());
         holder.tv_likes.setText(String.valueOf(modelFeed.getLikes()));
-        holder.tv_comments.setText(modelFeed.getComments() + " bình luận");
+        holder.tv_comments.setText(modelFeed.getComments() + " phản hồi");
         holder.tv_status.setText(modelFeed.getStatus());
 
         Glide.with(context).load(modelFeed.getPropic()).apply(RequestOptions.circleCropTransform()).into(holder.imgView_proPic);
@@ -86,7 +86,7 @@ public class AdapterFeed extends RecyclerView.Adapter<AdapterFeed.MyViewHolder> 
                 listener.onClickItem(modelFeed);
             }
         });
-        holder.icTick.setVisibility(modelFeed.isTick()? View.VISIBLE:View.GONE);
+        holder.icTick.setVisibility(modelFeed.isTick() ? View.VISIBLE:View.GONE);
 
     }
 

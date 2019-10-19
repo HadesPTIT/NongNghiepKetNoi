@@ -14,20 +14,34 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="15dp">
 
-        <ImageView
-            android:id="@+id/imgView_proPic"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_propic1" />
+
+        <RelativeLayout
+            android:id="@+id/container_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgView_proPic"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_propic1" />
+            <ImageView
+                android:id="@+id/id_tick"
+                android:src="@drawable/icon_tick"
+                android:layout_width="15dp"
+                android:visibility="gone"
+                android:layout_height="15dp"/>
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/imgView_proPic"
+            android:layout_toRightOf="@+id/container_view"
             android:orientation="vertical">
 
             <TextView

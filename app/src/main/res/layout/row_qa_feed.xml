@@ -13,6 +13,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp">
+
         <RelativeLayout
             android:id="@+id/container_view"
             android:layout_width="wrap_content"
@@ -33,7 +34,6 @@
                 android:layout_height="15dp"/>
 
         </RelativeLayout>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -62,7 +62,14 @@
                 android:textSize="13sp" />
 
         </LinearLayout>
-
+     <ImageView
+         android:id="@+id/pin"
+         android:visibility="gone"
+         android:layout_margin="10dp"
+         android:layout_alignParentRight="true"
+         android:src="@drawable/ic_pin"
+         android:layout_width="20dp"
+         android:layout_height="20dp"/>
     </RelativeLayout>
 
     <TextView
@@ -192,7 +199,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Bình luận"
+                    android:text="Phản hồi"
                     android:textColor="@color/black"
                     android:textSize="13sp" />
 

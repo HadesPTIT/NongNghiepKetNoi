@@ -7,7 +7,7 @@ public class ModelFeed implements Serializable {
     private int id, likes, comments, postpic;
     private String name, time, status,propic;
     private boolean isOwnRice;
-
+    private boolean tick;
     public ModelFeed(int id, int likes, int comments, String propic, int postpic, String name, String time, String status,boolean isOwnRice) {
         this.id = id;
         this.likes = likes;
@@ -18,6 +18,14 @@ public class ModelFeed implements Serializable {
         this.time = time;
         this.status = status;
         this.isOwnRice = isOwnRice;
+    }
+
+    public boolean isTick() {
+        return tick;
+    }
+
+    public void setTick(boolean tick) {
+        this.tick = tick;
     }
 
     public boolean isOwnRice() {

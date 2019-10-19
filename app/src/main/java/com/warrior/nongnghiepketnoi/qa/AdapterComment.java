@@ -20,10 +20,11 @@ import java.util.ArrayList;
 
 
 public class AdapterComment extends RecyclerView.Adapter<AdapterComment.MyViewHolder> {
-    
+
     Context context;
     ArrayList<Comment> commentArrayList = new ArrayList<>();
     RequestManager glide;
+
     public AdapterComment(Context context, ArrayList<Comment> CommentArrayList) {
         this.context = context;
         this.commentArrayList = CommentArrayList;
@@ -56,24 +57,24 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.MyViewHo
             holder.imgView_postPic.setVisibility(View.VISIBLE);
             glide.load(comment.getPostpic()).into(holder.imgView_postPic);
         }
-        if(comment.isOwnRice()){
+        if (comment.isOwnRice()) {
             holder.tv_likes.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
             holder.tvLabelRice.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
             holder.icRice.setImageResource(R.drawable.ic_rice_select);
-        }else {
+        } else {
             holder.tv_likes.setTextColor(context.getResources().getColor(R.color.black));
             holder.tvLabelRice.setTextColor(context.getResources().getColor(R.color.black));
             holder.icRice.setImageResource(R.drawable.ic_rice);
         }
-        if(comment.getCommentList()!=null){
+        if (comment.getCommentList() != null) {
             LinearLayoutManager layoutManager = new LinearLayoutManager(context);
             holder.recyclerViewSubComment.setLayoutManager(layoutManager);
             holder.recyclerViewSubComment.setNestedScrollingEnabled(false);
-            AdapterSubComment adapterComment = new AdapterSubComment(context,(ArrayList<Comment>) comment.getCommentList());
+            AdapterSubComment adapterComment = new AdapterSubComment(context, (ArrayList<Comment>) comment.getCommentList());
             holder.recyclerViewSubComment.setAdapter(adapterComment);
             adapterComment.notifyDataSetChanged();
         }
-
+        holder.icTick.setVisibility(comment.getTick()? View.VISIBLE:View.GONE);
     }
 
     @Override
@@ -83,21 +84,22 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_name, tv_time, tv_likes,  tv_status,tvLabelRice;
-        ImageView imgView_proPic, imgView_postPic ,icRice;
+        TextView tv_name, tv_time, tv_likes, tv_status, tvLabelRice;
+        ImageView imgView_proPic, imgView_postPic, icRice, icTick;
         RecyclerView recyclerViewSubComment;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             imgView_proPic = (ImageView) itemView.findViewById(R.id.imgView_proPic);
             imgView_postPic = (ImageView) itemView.findViewById(R.id.imgView_postPic);
-            tvLabelRice =  itemView.findViewById(R.id.tv_label_rice);
-            icRice =  itemView.findViewById(R.id.ic_rice);
+            tvLabelRice = itemView.findViewById(R.id.tv_label_rice);
+            icRice = itemView.findViewById(R.id.ic_rice);
             tv_name = (TextView) itemView.findViewById(R.id.tv_name);
             tv_time = (TextView) itemView.findViewById(R.id.tv_time);
             tv_likes = (TextView) itemView.findViewById(R.id.tv_like);
             tv_status = (TextView) itemView.findViewById(R.id.tv_status);
             recyclerViewSubComment = itemView.findViewById(R.id.recyclerViewSubComment);
+            icTick = itemView.findViewById(R.id.id_tick);
         }
     }
 }

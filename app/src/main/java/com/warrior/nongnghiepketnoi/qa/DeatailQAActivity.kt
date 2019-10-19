@@ -43,16 +43,21 @@ class DeatailQAActivity : AppCompatActivity() {
             tv_label_rice.setTextColor(getResources().getColor(R.color.black))
             ic_rice.setImageResource(R.drawable.ic_rice)
         }
-        initRecyleView()
+        initRecyleView(modelFeed.id)
     }
 
-    private fun initRecyleView() {
+    private fun initRecyleView(id: Int) {
         val layoutManager = LinearLayoutManager(this)
         recyclerViewComment.layoutManager = layoutManager
         recyclerViewComment.setNestedScrollingEnabled(false)
         adapterComment = AdapterComment(this, commentArrayList)
         recyclerViewComment.adapter = adapterComment
-        commentArrayList.addAll(Const.populateCommentRecyclerView())
+        if(id == 43){
+            commentArrayList.addAll(Const.populateComment2RecyclerView())
+        }
+        if(id == 123){
+            commentArrayList.addAll(Const.populateCommentRecyclerView())
+        }
         adapterComment.notifyDataSetChanged()
     }
 }
