@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -17,6 +18,12 @@ import com.warrior.nongnghiepketnoi.R
 class EventAdapter(var ctx: Context, var events: ArrayList<Event>) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
+    interface Listener {
+        fun onClickItem(event: Event)
+    }
+
+    private lateinit var listener : Listener
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view: View = LayoutInflater.from(ctx).inflate(R.layout.item_event, parent, false)
         return EventViewHolder(view)
@@ -24,6 +31,10 @@ class EventAdapter(var ctx: Context, var events: ArrayList<Event>) :
 
     override fun getItemCount(): Int {
         return events.size
+    }
+
+    fun setListener(listener: Listener) {
+        this.listener = listener
     }
 
     @SuppressLint("SetTextI18n")
@@ -38,6 +49,9 @@ class EventAdapter(var ctx: Context, var events: ArrayList<Event>) :
         } else {
             holder.imv_follow.setImageResource(R.drawable.ic_star_green_24dp)
         }
+        holder.ll_event.setOnClickListener {
+            listener.onClickItem(mEvent)
+        }
     }
 
 
@@ -48,6 +62,7 @@ class EventAdapter(var ctx: Context, var events: ArrayList<Event>) :
         internal var tv_number_follow: TextView
         internal var imv_follow: ImageView
         internal var imv_ava: ImageView
+        internal var ll_event: LinearLayout
 
         init {
 
@@ -56,6 +71,7 @@ class EventAdapter(var ctx: Context, var events: ArrayList<Event>) :
             tv_message = itemView.findViewById(R.id.tv_message) as TextView
             tv_number_follow = itemView.findViewById(R.id.tv_number_follow) as TextView
             imv_follow = itemView.findViewById(R.id.imv_follow) as ImageView
+            ll_event = itemView.findViewById(R.id.ll_event) as LinearLayout
         }
     }
 }

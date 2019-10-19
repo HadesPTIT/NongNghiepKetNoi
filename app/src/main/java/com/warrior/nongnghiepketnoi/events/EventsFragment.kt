@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_events.*
  * Created by Hades on 10/19/2019.
  */
 
-class EventsFragment : Fragment() {
+class EventsFragment : Fragment(), EventAdapter.Listener {
 
     var eventAdapter: EventAdapter? = null
     var list: ArrayList<Event> = ArrayList()
@@ -36,9 +36,14 @@ class EventsFragment : Fragment() {
             rvEvents?.apply {
                 layoutManager = LinearLayoutManager(context)
                 eventAdapter = EventAdapter(context, list)
+                eventAdapter?.setListener(this@EventsFragment)
                 adapter = eventAdapter
             }
         }, 500L)
+    }
+
+    override fun onClickItem(event: Event) {
+        fragmentManager?.beginTransaction()?.addToBackStack("")?.replace(R.id.rl_event_container,EventDetailFragment())?.commit()
     }
 
     private fun getAllEvents() {
