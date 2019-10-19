@@ -165,13 +165,5 @@
             </LinearLayout>
 
         </RelativeLayout>
-
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="15dp"
-        android:id="@+id/recyclerViewSubComment"
-        android:layout_below="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 </RelativeLayout>
