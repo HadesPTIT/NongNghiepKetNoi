@@ -1,5 +1,6 @@
 package com.warrior.nongnghiepketnoi
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -8,16 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tbuonomo.morphbottomnavigation.MorphBottomNavigationView
-import com.warrior.nongnghiepketnoi.newfeeds.NewFeedsFragment
 import com.warrior.nongnghiepketnoi.chatlist.ChatListFragment
 import com.warrior.nongnghiepketnoi.events.EventsFragment
+import com.warrior.nongnghiepketnoi.newfeeds.NewFeedsFragment
 import com.warrior.nongnghiepketnoi.qa.QAFragment
+import com.warrior.nongnghiepketnoi.quiz.QuizesActivity
 
-
-class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), NewFeedsFragment.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
         //TODO
     }
+
     private lateinit var newFeedsFragment: NewFeedsFragment
     private lateinit var QAFragment: QAFragment
     private lateinit var chatListFragment: ChatListFragment
@@ -35,10 +37,12 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
         eventFragment = EventsFragment.newInstance()
         replaceFragment(newFeedsFragment)
     }
-    private fun replaceFragment(frag :Fragment) {
+
+    private fun replaceFragment(frag: Fragment) {
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.frame_container, frag).commit()
     }
+
     private val mOnNavigationItemSelectedListener =
         object : BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -50,7 +54,7 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
                     }
                     R.id.navigation_event -> {
                         replaceFragment(eventFragment)
-                        Log.e("TAG","navigation_event")
+                        Log.e("TAG", "navigation_event")
                         return true
                     }
                     R.id.navigation_qa -> {
@@ -62,7 +66,8 @@ class MainActivity : AppCompatActivity() , NewFeedsFragment.OnFragmentInteractio
                         return true
                     }
                     R.id.navigation_profile -> {
-                        Log.e("TAG","navigation_profile")
+                        val intent = Intent(this@MainActivity, QuizesActivity::class.java)
+                        startActivity(intent)
                         return true
                     }
                 }
