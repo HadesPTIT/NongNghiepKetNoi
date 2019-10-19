@@ -23,4 +23,12 @@
         <item name="android:textSize">8sp</item>
     </style>
 
+    <style name="EditScreenTextInputLayoutStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/colorTextInput</item>
+        <item name="colorControlActivated">@color/colorTextInput</item>
+        <item name="colorControlHighlight">@color/colorTextInput</item>
+        <item name="colorAccent">@color/colorTextInput</item>
+        <item name="android:textColorHint">@color/colorTextInput</item>
+    </style>
+
 </resources>
