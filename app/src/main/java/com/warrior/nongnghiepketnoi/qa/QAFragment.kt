@@ -15,7 +15,10 @@ import com.warrior.nongnghiepketnoi.newfeeds.AdapterFeed
 import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed
 import java.util.ArrayList
 import android.content.Intent
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.warrior.nongnghiepketnoi.R
+import kotlinx.android.synthetic.main.row_qa_feed.*
 
 
 private const val ARG_PARAM1 = "param1"
@@ -48,14 +51,18 @@ class QAFragment : Fragment(), AdapterFeed.Listener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_feeds, container, false)
+        return inflater.inflate(R.layout.fragment_new_feedsqa, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recyclerView) as RecyclerView
-
         val layoutManager = LinearLayoutManager(context)
+        context?.let {
+            Glide.with(it).load("http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg").apply(RequestOptions.circleCropTransform())
+                .into(imgView_proPic)
+        }
+
         recyclerView.layoutManager = layoutManager
 
         adapterFeed = AdapterFeed(context, modelFeedArrayList)
