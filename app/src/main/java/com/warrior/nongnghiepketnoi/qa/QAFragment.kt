@@ -14,6 +14,7 @@ import com.warrior.nongnghiepketnoi.R
 import com.warrior.nongnghiepketnoi.constance.Const
 import com.warrior.nongnghiepketnoi.newfeeds.AdapterFeed
 import com.warrior.nongnghiepketnoi.newfeeds.ModelFeed
+import kotlinx.android.synthetic.main.fragment_new_feedsqa.*
 
 
 private const val ARG_PARAM1 = "param1"
