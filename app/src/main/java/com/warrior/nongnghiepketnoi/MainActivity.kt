@@ -14,6 +14,7 @@ import com.warrior.nongnghiepketnoi.events.EventsFragment
 import com.warrior.nongnghiepketnoi.newfeeds.NewFeedsFragment
 import com.warrior.nongnghiepketnoi.qa.QAFragment
 import com.warrior.nongnghiepketnoi.quiz.QuizesActivity
+import com.warrior.nongnghiepketnoi.setting.SettingFragment
 
 class MainActivity : AppCompatActivity(), NewFeedsFragment.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity(), NewFeedsFragment.OnFragmentInteraction
     private lateinit var QAFragment: QAFragment
     private lateinit var chatListFragment: ChatListFragment
     private lateinit var eventFragment: EventsFragment
+    private lateinit var settingFragment: SettingFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity(), NewFeedsFragment.OnFragmentInteraction
         chatListFragment = ChatListFragment.newInstance()
         QAFragment = com.warrior.nongnghiepketnoi.qa.QAFragment.newInstance()
         eventFragment = EventsFragment.newInstance()
+        settingFragment = SettingFragment.newInstance()
         replaceFragment(newFeedsFragment)
     }
 
@@ -66,8 +69,8 @@ class MainActivity : AppCompatActivity(), NewFeedsFragment.OnFragmentInteraction
                         return true
                     }
                     R.id.navigation_profile -> {
-                        val intent = Intent(this@MainActivity, QuizesActivity::class.java)
-                        startActivity(intent)
+                        replaceFragment(settingFragment)
+
                         return true
                     }
                 }

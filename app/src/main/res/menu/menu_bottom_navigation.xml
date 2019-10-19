@@ -8,22 +8,22 @@
 
     <item
         android:id="@+id/navigation_event"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_event_available_black_24dp"
         android:title="Sự kiện" />
 
     <item
         android:id="@+id/navigation_qa"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_personal_video_black_24dp"
         android:title="Hỏi/Đáp" />
 
     <item
         android:id="@+id/navigation_chat"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_speaker_notes_black_24dp"
         android:title="Trò chuyện" />
 
     <item
         android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Cá nhân" />
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Cài đặt " />
 
 </menu>
