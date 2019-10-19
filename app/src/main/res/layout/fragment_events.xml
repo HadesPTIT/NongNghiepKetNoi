@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_filters"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <Button
+            style="@style/ButtonFilterStyle"
+            android:text="Lọc" />
+
+        <Button
+            style="@style/ButtonFilterStyle"
+            android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+            android:text="Địa điểm" />
+
+        <Button
+            style="@style/ButtonFilterStyle"
+            android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+            android:text="Thời gian" />
+
+        <Button
+            style="@style/ButtonFilterStyle"
+            android:drawableRight="@drawable/ic_arrow_drop_down_black_24dp"
+            android:text="Loại" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEvents"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_event"
+        android:layout_below="@+id/ll_filters">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/ll_event"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_green_drawable"
+            android:text="Tạo sự kiện"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>
