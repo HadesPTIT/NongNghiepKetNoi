@@ -74,10 +74,67 @@ class Const {
             return modelFeedArrayList
 
         }
+        fun populateComment2RecyclerView(): ArrayList<Comment> {
+            var modelFeedArrayList = ArrayList<Comment>()
+            var modelFeed = Comment(
+                1,
+                9,
+                "http://tiasang.com.vn/Portals/0/DMSTAO%20anh%202.jpg",
+                0,
+                "Nguyen Van Minh",
+                "2 hrs",
+                "Trước hết đề nghị bạn mang mẫu đất đến Sở Nông nghiệp & PTNT hoặc Sở Khoa học và Công nghệ tỉnh Lâm Đồng nhờ phân tích. Do địa hình đất đỏ của Bazan rất phức tạp, chia ra nhiều tiểu vùng khác nhau. Đất bị thoái hóa được chia ra như sau:\n" +
+                        "\n" +
+                        "- Thoái hóa vật lý: Quá trình dẫm đạp của con người để chăm sóc, thu hoạch chè/cà phê trong thời gian dài khiến bề mặt đất trở nên chặt cứng, chai lì, khả năng thấm nước kém đi. Tỷ lệ sét lớp đất mặt trung bình của các mẫu đất trồng chè/cà phê trong khu vực nghiên cứu là 26,3 - 39,20% và có thành phần cơ giới phổ biến là thịt trung bình, hàm lượng sét tăng dần theo chiều sâu phẫu diện... Quá trình khai thác đất canh tác chè/cà phê nhiều năm đã tạo điều kiện thúc đẩy quá trình rửa trôi các cấp hạt sét ở tầng đất mặt đều giảm mạnh. Các biểu hiện suy giảm về thành phần cơ giới, kết cấu đất trong hình thái phẫu diện là những biểu hiện rõ rệt của các dấu hiệu thoái hóa về tính chất vật lý",false
+            )
+            modelFeed.tick = true
+
+            var subComment = ArrayList<Comment>()
+
+            var modelSubCm = Comment(
+                1,
+                9,
+                "http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg",
+               0,
+                "Lê Lâm",
+                "2 hrs",
+                "Còn loại thứ 2 là gì ạ ",false
+            )
+            subComment.add(modelSubCm)
+             modelSubCm = Comment(
+                1,
+                9,
+                "http://tiasang.com.vn/Portals/0/DMSTAO%20anh%202.jpg",
+                0,
+                "Nguyen Van Minh",
+                "2 hrs",
+                "Thoái hóa hóa học: Số liệu kết quả phân tích một số mẫu đất trồng chè/cà phê đại diện tại khu vực nghiên cứu cho thấy đất có phản ứng chua đến rất chua, mặc dù đặc điểm của cây chè/cà phê là ưa chua, nhưng với độ pH thấp như trên cũng thể hiện phần nào đó mức độ suy thoái đất. Hàm lượng mùn tầng mặt khá do được bón phân thường xuyên nhưng giảm mạnh ở những tầng dưới, hàm lượng đạm, lân, kali tổng số tầng đất mặt khá đến giàu, kali dễ tiêu rất nghèo đến nghèo",false
+            )
+            modelSubCm.tick = true
+            subComment.add(modelSubCm)
+             modelSubCm = Comment(
+                1,
+                9,
+                "http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg",
+                0,
+                "Lê Lâm",
+                "2 hrs",
+                "Vâng cảm ơn chuyên gia ",false
+            )
+            subComment.add(modelSubCm)
+
+            modelFeed.commentList = subComment
+            modelFeedArrayList.add(modelFeed)
+            //+==============================
+
+            return modelFeedArrayList
+
+        }
+
         fun populateRecyclerView(): ArrayList<ModelFeed> {
             var modelFeedArrayList = ArrayList<ModelFeed>()
             var modelFeed = ModelFeed(
-                1,
+                123,
                 9,
                 4,
                 "https://image-us.24h.com.vn/upload/4-2018/images/2018-12-03/1543833238-98-bo-luong-33-ty-ve-lam-nong-dan-7-nam-1-1543758863-width500height333.jpeg",
@@ -142,12 +199,12 @@ class Const {
         fun populateQARecyclerView(): ArrayList<ModelFeed> {
             var modelFeedArrayList = ArrayList<ModelFeed>()
             var modelFeed = ModelFeed(
-                2, 26, 6, "http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg", 0,
+                23, 26, 6, "http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg", 0,
                 "Lê Lâm", "9 hrs", "Hỏi cách phòng và trị bệnh tụ huyết trùng trên lợn",false
             )
             modelFeedArrayList.add(modelFeed)
             modelFeed = ModelFeed(
-                3,
+                33,
                 17,
                 5,
                 "http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg",
@@ -158,7 +215,7 @@ class Const {
             )
             modelFeedArrayList.add(modelFeed)
             modelFeed = ModelFeed(
-                4,
+                43,
                 17,
                 5,
                 "http://kenh14cdn.com/2016/img-20160930-104023-1477075473425.jpg",
