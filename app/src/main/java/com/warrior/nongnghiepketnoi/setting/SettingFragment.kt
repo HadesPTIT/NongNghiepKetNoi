@@ -12,28 +12,29 @@ import kotlinx.android.synthetic.main.fragment_setting.*
 
 class SettingFragment : Fragment() {
     companion object Factory {
-        fun  newInstance(): SettingFragment {
+        fun newInstance(): SettingFragment {
             val args = Bundle()
             val fragment = SettingFragment()
             fragment.arguments = args
             return fragment
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate( R.layout.fragment_setting,container,false)
+        return inflater.inflate(R.layout.fragment_setting, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        layout_quizz.setOnClickListener { gotoQuizz() }
+        test.setOnClickListener { gotoQuizz() }
 
     }
 
-    fun gotoQuizz(){
+    fun gotoQuizz() {
         val intent = Intent(activity, QuizesActivity::class.java)
         startActivity(intent)
     }
