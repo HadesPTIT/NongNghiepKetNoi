@@ -96,7 +96,7 @@
             android:layout_height="47dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Ngày hội khuyến nông tỉnh Quảng Nam lần 11"
+            android:text="Ngày hội khuyến nông tỉnh Quảng Nam lần 1"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
