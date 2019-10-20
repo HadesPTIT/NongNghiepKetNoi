@@ -36,7 +36,7 @@ class ChatListFragment : Fragment(), ChatViewHolder.OnItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         list.clear()
-        list.add(ChatItem(R.drawable.avartar_chat,"Nam Bui","Xin chào Nam  !!!!", "20:30",false))
+        list.add(ChatItem(R.drawable.avartar_chat,"Nam Bui","Xin chào Nam  !!!!", "20:30",true))
         list.add(ChatItem(R.drawable.avatar_chat2,"Tuân Nguyễn","Xin chào Tuân   !!!!", "20:30",true))
         list.add(ChatItem(R.drawable.avatar_chat3,"Tuyên Bui","Xin chào Tuyên   !!!!", "20:30",true))
         list.add(ChatItem(R.drawable.avatar_chat4,"Hướng Phạm ","Xin chào Hướng   !!!!", "20:30",false))
